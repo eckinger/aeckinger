@@ -20,6 +20,17 @@
                     projectPath = ./.;
                     packages = with pkgs; [
                         # Native dependencies, e.g. imagemagick
+                        (nodePackages.tailwindcss.overrideAttrs
+                            (_: {
+                                plugins = [
+                                    nodePackages."@tailwindcss/aspect-ratio"
+                                    nodePackages."@tailwindcss/forms"
+                                    nodePackages."@tailwindcss/language-server"
+                                    nodePackages."@tailwindcss/line-clamp"
+                                    nodePackages."@tailwindcss/typography"
+                                ];
+                            })
+                        )
                     ];
                     haskellPackages = p: with p; [
                         # Haskell dependencies go here
@@ -28,6 +39,7 @@
                         base
                         wai
                         text
+
 
                         # Uncomment on local development for testing
                         # hspec
@@ -42,7 +54,7 @@
                     # Custom processes that don't appear in https://devenv.sh/reference/options/
                     processes = {
                         # Uncomment if you use tailwindcss.
-                        # tailwind.exec = "tailwindcss -c tailwind/tailwind.config.js -i ./tailwind/app.css -o static/app.css --watch=always";
+                        tailwind.exec = "tailwindcss -c tailwind/tailwind.config.js -i ./tailwind/app.css -o static/app.css --watch=always";
                     };
                 };
             };
