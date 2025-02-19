@@ -19,6 +19,11 @@ instance View WelcomeView where
                     <span class={buttonBorderClasses}>Photography</span>
                 </a>
 
+                <a class="relative" href="https://www.goodreads.com/eckinger">
+                    <span class={buttonShadowClasses}></span>
+                    <span class={buttonBorderClasses}>Reading</span>
+                </a>
+
                 <a class="relative" href={PhotosAction}>
                     <span class={buttonShadowClasses}></span>
                     <span class={buttonBorderClasses}>Writing</span>

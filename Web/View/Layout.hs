@@ -7,6 +7,7 @@ import IHP.Controller.RequestContext
 import Web.Types
 import Web.Routes
 import Application.Helper.View
+import Control.Lens (none)
 
 defaultLayout :: Html -> Html
 defaultLayout inner = [hsx|
