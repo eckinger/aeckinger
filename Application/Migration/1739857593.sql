@@ -1,0 +1,5 @@
+CREATE TABLE photos (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
+    image TEXT NOT NULL,
+    caption TEXT NOT NULL
+);
